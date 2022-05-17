@@ -1,0 +1,8 @@
+<%= render "shared/header" do %>
+    <h2><%= @warehouse.name %></h2>
+    <% unless params[:controller].eql? "sections" and params[:action].eql? "index" %>
+        <h3><%= @section.name %></h3>
+        <%= link_to "Section Index", warehouse_sections_path %>
+    <% end %>
+    <%= yield %>
+<% end %>

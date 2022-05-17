@@ -1,0 +1,21 @@
+<%= render "shared/zone" do %>
+  <%= render "shared/flash" %>
+  <div style = "margin-top:2%">
+    <%= button_to "Edit zone information",
+        edit_warehouse_section_zone_path(@warehouse, @section, @zone), method: :get %>
+      <ul style = "margin-top:4%">
+          <li>Zone code: <span style = "margin-left:4%"><%= @section.code %><%= @zone.code %></span></li>
+          <li>Description: <div><%= @zone.description %></div></li>
+          <li>Created on: <span style = "margin-left:2%"><%= @section.created_at %></span></li>
+          <li>Updated on: <span style = "margin-left:2%"><%= @section.updated_at %></span></li>
+    </ul>
+  </div>
+
+  <div>
+    <%= button_to "View items in this zone",
+                  warehouse_section_zone_items_path(@warehouse, @section, @zone), method: :get %>
+    <br>
+  </div>
+  <%= button_to "Delete this zone", warehouse_section_zone_path(@warehouse, @section, @zone),
+    method: :delete, data: {controller: "del", action: "click->del#conf", del_value: "zone"} %>
+<% end %>

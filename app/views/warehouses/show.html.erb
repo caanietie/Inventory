@@ -1,0 +1,22 @@
+<%= render "shared/header" do %>
+  <h2><%= @warehouse.name %></h2>
+  <%= render "shared/flash" %>
+  <div style = "margin-top:2%">
+    <%= button_to "Edit warehouse information", edit_warehouse_path(@warehouse), method: :get %>
+    <ul style = "margin-top:4%">
+      <li>Location: <span style = "margin-left:4%"><%= @warehouse.location %></li>
+      <li>Description:
+        <div><%= @warehouse.description %></div>
+      </li>
+      <li>Updated on: <span style = "margin-left:2%"><%= @warehouse.updated_at %></li>
+      <li>Created on: <span style = "margin-left:2%"><%= @warehouse.created_at %></li>
+    </ul>
+  </div>
+
+  <div>
+    <%= button_to "View sections in this warehouse", warehouse_sections_path(@warehouse), method: :get %>
+    <br>
+  </div>
+  <%= button_to "Delete this warehouse", warehouse_path(@warehouse),
+    method: :delete, data: {controller: "del", action: "click->del#conf", del_what_value: "warehouse"} %>
+<% end %>

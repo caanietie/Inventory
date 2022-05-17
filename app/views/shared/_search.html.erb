@@ -1,0 +1,6 @@
+<%= form_with url: search_warehouses_path, method: :get do |form| %>
+    <label>Search: </label><%= form.select :what, %i[warehouse section zone item] %>
+    <label style = "margin-left: 4%">By: </label><%= form.select :by, %i[name code] %><br>
+    <%= form.text_field :value, list: "search", required: true %>
+    <%= form.submit "Search", style: "display:block;margin-bottom:5%" %>
+<% end %>

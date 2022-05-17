@@ -1,0 +1,14 @@
+<%= render "shared/item" do %>
+  <%= render "shared/flash" %>
+  <div style = "margin-top:2%">
+    <%= button_to "Edit item information", edit_warehouse_section_zone_item_path(@warehouse, @section, @zone), method: :get %>
+    <ul style = "margin-top:4%">
+      <li>Item code: <span style = "margin-left:2%"><%= @section.code %><%= @zone.code %><%= @item.code %></span></li>
+      <li>Item quantity: <span style = "margin:2%"><%= @item.quantity %> <%= @item.measure %></span></li>
+      <li>Description: <div><%= @item.description %></div></li>
+      <li>Updated on: <span style = "margin:2%"><%= @item.updated_at %></span></li>
+      <li>Created on: <span style = "margin:2%"><%= @item.created_at %></span></li>
+    </ul>
+  </div>
+  <%= button_to "Delete this item", warehouse_section_zone_path(@warehouse, @section, @zone, @item), method: :delete, data: {controller: "del", action: "click->del#conf", del_what_value: "item"} %>
+<% end %>

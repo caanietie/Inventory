@@ -1,0 +1,13 @@
+<%= render "shared/header" do %>
+    <%= render "shared/flash" %>
+    <% if @search.nil? or @search.empty? %>
+        <p>No item was found for this search parameters</p>
+    <% else  %>
+        <p>Results from the search</p>
+        <ol>
+            <% @search.each do |name, path| %>
+                <li><%= link_to name, path %></li>
+            <% end %>
+        </ol>
+    <% end %>
+<% end %>

@@ -1,0 +1,16 @@
+<%= form_with model: [@warehouse] do |form| %>
+  <%= render "shared/form_error", form: form %>
+  <div style = "margin:4%">
+    <%= form.label "Name of Warehouse" %><br>
+    <%= form.text_field :name, required: true %>
+  </div>
+  <div style = "margin:4%">
+    <%= form.label "Location of Warehouse" %><br>
+    <%= form.text_field :location, required: true %>
+  </div>
+  <div style = "margin:4%">
+    <%= form.label "Describe warehouse" %><br>
+    <%= form.text_area :description, required: true %>
+  </div>
+  <div style = "margin-left:4%"><%= form.submit %></div>
+<% end %>

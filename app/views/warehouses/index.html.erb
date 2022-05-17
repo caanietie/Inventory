@@ -1,0 +1,16 @@
+<%= render "shared/header" do %>
+  <%= render "shared/flash" %>
+  <div>
+    <%= button_to "Create New Warehouse", new_warehouse_path, method: :get %>
+    <p>Here is a list of our warehouses</p>
+    <% if @warehouses.empty? or @warehouses.nil? %>
+      <p>There are no warehouses</p>
+    <% else %>
+      <ol>
+        <% @warehouses.each do |warehouse| %>
+          <li><%= link_to warehouse.name, warehouse %></li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= render "shared/zone" do %>
+  <%= render "shared/flash" %>
+  <div>
+    <%= button_to "Create zone in this section",
+      new_warehouse_section_zone_path(@warehouse, @section), method: :get %>
+    <p>Welcome to the <span><%= @section.name %></span>.<br>
+    The following are the zones in this section of the warehouse:<br>
+    <br>
+    <% if @zones.empty? or @zones.nil? %>
+      <span>There are no zones in this section of the warehouse.</span>
+    <% else %>
+      <table>
+        <thead>
+          <tr><th>Zone Name</th><th>Zone Code</th></tr>
+        </thead>
+        <tbody>
+          <% @zones.each do |zone| %>
+            <tr><td><%= link_to zone.name, warehouse_section_zone_path(@warehouse, @section, zone) %></td>
+              <td><center><%= @section.code %><%= zone.code %></center></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    </p>
+  </div>
+<% end %>

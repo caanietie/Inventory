@@ -1,0 +1,5 @@
+<%= render "shared/item"  do %>
+  <h5 style = "text-transform:uppercase">Edit <%= @item.name %> information in <%= @zone.name %> zone in <%= @section.name %></h5>
+  <%= render "shared/flash" %>
+  <%= render "form" %>
+<% end %>

@@ -1,0 +1,8 @@
+<% form = local_assigns[:form] %>
+<% unless form.object.errors.nil? or form.object.errors.empty? %>
+  <ul>
+    <% form.object.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+<% end %>

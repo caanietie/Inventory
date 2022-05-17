@@ -1,0 +1,27 @@
+<%= render "shared/section" do %>
+<%= render "shared/flash" %>
+    <div>
+        <%= button_to "Create sections in this warehouse",
+                    new_warehouse_section_path(@warehouse), method: :get %>
+        <p>Welcome to the <span><%= @warehouse.name %></span>.<br>
+            The following are the sections in this warehouse:<br>
+            <br>
+            <% if @sections.empty? or @sections.nil? %>
+                <span>There are no sections in this warehouse.</span>
+            <% else %>
+                <table>
+                  <thead>
+                    <tr><th>Section Name</th><th>Section Code</th></tr>
+                  </thead>
+                  <tbody>
+                    <% @sections.each do |section| %>
+                      <tr>
+                        <td><%= link_to section.name, warehouse_section_path(@warehouse, section) %></td>
+                        <td><center><%= section.code %></center></td>
+                    <% end %>
+                  </tbody>
+                </table>
+            <% end %>
+        </p>
+    </div>
+<% end %>

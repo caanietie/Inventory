@@ -1,0 +1,6 @@
+<h1>Warehouses</h1>
+<%= render "shared/search" %>
+<% unless params[:controller].eql? "warehouses" and params[:action].eql? "index" %>
+    <%= link_to "Warehouse Index", warehouses_path %>
+<% end %>
+<%= yield %>
