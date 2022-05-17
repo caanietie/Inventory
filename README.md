@@ -22,3 +22,9 @@ The `Item Index` link gives a list of all the items in a given zone of a section
 
 ## Using the warehouse search area
 The search area can be used to search for a warehouse, section in a warehouse, zone within a given section, or an item. The search may be performed by `name` or `code` associated with the warehouse, section, zone or item.
+
+## Dependencies
+This web application requires
+* Ruby ~>3.1.0
+* Rails ~> 7.0.2
+Please see the Gemfile for more
