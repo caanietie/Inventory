@@ -25,7 +25,7 @@ The search area can be used to search for a warehouse, section in a warehouse, z
 
 ## Dependencies
 This web application requires
-* Ruby ~>3.1.0
+* Ruby ~> 3.1.0
 * Rails ~> 7.0.2
 
 Please see the Gemfile for more
